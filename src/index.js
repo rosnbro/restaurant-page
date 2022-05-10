@@ -1,15 +1,33 @@
-console.log("this is a test!");
+import Home from './home';
+import Menu from './menu';
+import Contact from './contact';
+import './style.css';
+import Background from './pie.jpg';
 
-const content = document.querySelector('#content');
+const content = document.getElementById('content');
 
-let title;
-let background;
-let description;
+function init() {
+    renderBackground();
+    renderHeader();
+}
 
-title.innerHTML = `<h1></h1>`;
-background.innerHTML = `<img src="">`;
-description.innerHTML = `<p></p>`;
+function renderBackground() {
+    const background = new Image();
 
-content.appendChild(title);
-content.appendChild(background);
-content.appendChild(description);
+    background.src = Background;
+    background.alt = 'A top view photo of a pie';
+    background.classList.add('background');
+
+    content.appendChild(background);
+}
+
+function renderHeader() {
+    const header = document.createElement('header');
+    const title = document.createElement('h1');
+
+    title.textContent = 'Pi Place';
+
+    content.appendChild(title);
+}
+
+init();
