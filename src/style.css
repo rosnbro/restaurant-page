@@ -2,10 +2,30 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
+    --header-bg-color: #7fffd4;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 #content {
-    background: url('./pie.jpg');
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 500px;
+    background-color: var(--header-bg-color);
+}
+
+h1 {
+    margin: 0;
+}
+
+button {
+    font-size: 1rem;
 }
 
 .background {
