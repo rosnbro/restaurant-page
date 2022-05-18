@@ -2,7 +2,6 @@ import renderHome from './home';
 import renderMenu from './menu';
 import renderContact from './contact';
 import './style.css';
-import Background from './pie.jpg';
 
 
 
@@ -10,7 +9,6 @@ function init() {
     const content = document.getElementById('content');
 
     content.appendChild(renderHeader());
-    content.appendChild(renderBackground());
     content.appendChild(renderHome());
     content.appendChild(renderFooter());
 }
@@ -46,16 +44,6 @@ function renderNav() {
     nav.appendChild(contactButton);
 
     return nav;
-}
-
-function renderBackground() {
-    const background = new Image();
-
-    background.src = Background;
-    background.alt = 'Top view photo of a pie';
-    background.classList.add('background');
-
-    return background;
 }
 
 function renderFooter() {
