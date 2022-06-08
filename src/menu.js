@@ -1,6 +1,10 @@
 function renderMenu() {
     const menuContent = document.createElement('main');
-    menuContent.textContent = "MENU";
+    const card = document.createElement('div');
+    
+
+    menuContent.appendChild(card);
+
     return menuContent;
 }
 

@@ -1,6 +1,10 @@
 function renderContact() {
     const contactContent = document.createElement('main');
-    contactContent.textContent = "CONTACT";
+    const card = document.createElement('div');
+    
+
+    contactContent.appendChild(card);
+
     return contactContent;
 }
 

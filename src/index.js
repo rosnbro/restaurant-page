@@ -7,51 +7,59 @@ import './style.css';
 function build(page) {
     const content = document.getElementById('content');
     content.innerHTML = '';
-    content.appendChild(renderHeader());
+    content.appendChild(renderHeader(page));
     content.appendChild(renderMain(page));
     content.appendChild(renderFooter());
 }
 
-function renderHeader() {
+function renderHeader(page) {
     const header = document.createElement('header');
     const title = document.createElement('h1');
 
     title.textContent = 'Pi Place';
     
     header.appendChild(title);
-    header.appendChild(renderNav());
+    header.appendChild(renderNav(page));
 
     return header;
 }
 
-function renderNav() {
+function renderNav(page) {
     const nav = document.createElement('nav');
     const homeButton = document.createElement('button');
     const menuButton = document.createElement('button');
     const contactButton = document.createElement('button');
 
+    switch (page) {
+        case 'menu':
+            menuButton.classList.add('active');
+            break;
+        case 'contact':
+            contactButton.classList.add('active');
+            break;
+        default: 'home'
+            homeButton.classList.add('active');
+            break;
+    }
+
     homeButton.addEventListener('click', () => {
         build('home');
-        //homeButton.classList.add('active');
     });
     menuButton.addEventListener('click', () => {
         build('menu');
-        //homeButton.classList.add('active');
     });
     contactButton.addEventListener('click', () => {
         build('contact');
-        //homeButton.classList.add('active');
     });
 
     homeButton.textContent = 'Home';
     menuButton.textContent = 'Menu';
     contactButton.textContent = 'Contact';
-
+    /*
     homeButton.classList.add('navItem');
-    homeButton.classList.add('active');
     menuButton.classList.add('navItem');
     contactButton.classList.add('navItem');
-
+    */
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
     nav.appendChild(contactButton);
