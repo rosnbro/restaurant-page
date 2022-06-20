@@ -2,13 +2,13 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    --header-bg-color: #C1966E;
+    --header-bg-color: #677A98;
     --header-font-color: white;
-    --nav-bg-color: #C1966E;
-    --nav-hover-bg-color: #D0B092;
-    --nav-active-bg-color: #D0B092;
+    --nav-bg-color: #677A98;
+    --nav-hover-bg-color: rgb(152, 133, 103);
+    --nav-active-bg-color: #988567;
     --nav-active-font-color: white;
-    --card-bg-color: rgba(193, 150, 110, 0.8);
+    --card-bg-color: rgba(152, 133, 103, 0.8);
     --body-bg-color: black;
 }
 
