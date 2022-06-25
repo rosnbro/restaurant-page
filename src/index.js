@@ -1,5 +1,6 @@
 import renderHome from './home';
 import renderMenu from './menu';
+import renderAbout from './about';
 import renderContact from './contact';
 import './style.css';
 
@@ -26,13 +27,17 @@ function renderHeader(page) {
 
 function renderNav(page) {
     const nav = document.createElement('nav');
-    const homeButton = document.createElement('button');
-    const menuButton = document.createElement('button');
-    const contactButton = document.createElement('button');
+    const homeButton = document.createElement('a');
+    const menuButton = document.createElement('a');
+    const aboutButton = document.createElement('a');
+    const contactButton = document.createElement('a');
 
     switch (page) {
         case 'menu':
             menuButton.classList.add('active');
+            break;
+        case 'about':
+            aboutButton.classList.add('active');
             break;
         case 'contact':
             contactButton.classList.add('active');
@@ -48,20 +53,26 @@ function renderNav(page) {
     menuButton.addEventListener('click', () => {
         build('menu');
     });
+    aboutButton.addEventListener('click', () => {
+        build('about');
+    });
     contactButton.addEventListener('click', () => {
         build('contact');
     });
 
     homeButton.textContent = 'Home';
     menuButton.textContent = 'Menu';
+    aboutButton.textContent = 'About Us';
     contactButton.textContent = 'Contact';
     /*
     homeButton.classList.add('navItem');
     menuButton.classList.add('navItem');
+    aboutButton.classList.add('navItem');
     contactButton.classList.add('navItem');
     */
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
+    nav.appendChild(aboutButton);
     nav.appendChild(contactButton);
 
     return nav;
@@ -71,6 +82,8 @@ function renderMain(page) {
     switch (page) {
         case 'menu':
             return renderMenu();
+        case 'about':
+            return renderAbout();
         case 'contact':
             return renderContact();
         default: 'home'
