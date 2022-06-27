@@ -25,6 +25,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
     /*display: flex;
     flex-direction: column;
     align-items: center;*/
@@ -36,7 +37,6 @@ header {
     width: 100%;
     background-color: var(--header-bg-color);
     display: flex;
-
     overflow: visible;
 }
 
@@ -107,7 +107,7 @@ a:active {
 }
 
 main {
-    height: calc(100vh - 400px);
+    min-height: calc(100vh - 400px);
     width: 100%;
     padding-top: 150px;
     background-image: url(./pie-bg.jpg);
@@ -115,13 +115,14 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: scroll;
 }
 
 main div {
-    height: 300px;
+    min-height: 300px;
     width: 75%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
     padding: 2rem;
     /*box-shadow: 0 0 0.5rem white;*/
     border-left: 8px solid var(--header-font-color);
@@ -138,6 +139,7 @@ main.home div {
 footer {
     height: 100px;
     width: 100%;
+    bottom: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
