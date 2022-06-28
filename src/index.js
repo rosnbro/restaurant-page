@@ -62,7 +62,7 @@ function renderNav(page) {
 
     homeButton.textContent = 'Home';
     menuButton.textContent = 'Menu';
-    aboutButton.textContent = 'About Us';
+    aboutButton.innerHTML = 'About<br>Us';
     contactButton.textContent = 'Contact';
     /*
     homeButton.classList.add('navItem');
@@ -98,7 +98,7 @@ function renderFooter() {
     const hours = document.createElement('div');
     
     // ADD SOCIAL LINKS
-    hours.innerHTML = 'Hours<br>Wed: 2PM - 6PM<br>Sat: 8AM - 2PM';
+    hours.innerHTML = '<b>Hours</b><br>Wed: 2PM - 6PM<br>Sat: 8AM - 2PM';
     address.innerHTML = 'Blacksburg Farmers Market<br>108 W Roanoke St.<br>Blacksburg, VA 24060';
 
     footer.appendChild(social);

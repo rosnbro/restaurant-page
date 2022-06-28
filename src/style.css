@@ -2,14 +2,18 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    --header-bg-color: #677A98;
+    --header-bg-color: #958F81;
     --header-font-color: white;
-    --nav-bg-color: #988567;
-    --nav-hover-bg-color: purple;
-    --nav-active-bg-color: #988567;
-    --nav-active-font-color: white;
-    --card-bg-color: rgba(152, 133, 103, 0.9);
+
+    --nav-bg-color: #A58162;
+    --nav-border-color: #9A6844;
+    --nav-hover-border-color: purple;
+    --nav-font-color: white;
+
+    --card-bg-color: rgba(166, 130, 100, 0.9);
     --card-home-bg-color: rgba(152, 133, 103, 0);
+    --card-border-color: #9A6844;
+    --card-font-color: white;
     --body-bg-color: black;
 }
 
@@ -26,9 +30,6 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;*/
     background-color: var(--body-bg-color);
 }
 
@@ -67,43 +68,66 @@ nav {
 a {
     margin: 0;
     padding: 10px;
+    text-align: center;
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    color: var(--header-font-color);
+    color: var(--nav-font-color);
     background-color: var(--nav-bg-color);
 }
 
 a:nth-child(1) {
     border-radius: 100% 0 0 0;
+    border-top: solid 4px var(--nav-border-color);
+    border-left: solid 4px var(--nav-border-color);
     text-align: right;
-    line-height: 120px;
+    line-height: 110px;
+}
+
+a:nth-child(1):hover,
+a:nth-child(1).active {
+    border-right: solid 4px var(--nav-hover-border-color);
+    border-bottom: solid 4px var(--nav-hover-border-color);
 }
 
 a:nth-child(2) {
     border-radius: 0 100% 0 0;
+    border-top: solid 4px var(--nav-border-color);
+    border-right: solid 4px var(--nav-border-color);
     text-align: left;
-    line-height: 120px;
+    line-height: 110px;
+}
+
+a:nth-child(2):hover,
+a:nth-child(2).active {
+    border-left: solid 4px var(--nav-hover-border-color);
+    border-bottom: solid 4px var(--nav-hover-border-color);
 }
 
 a:nth-child(3) {
     border-radius: 0 0 0 100%;
+    border-bottom: solid 4px var(--nav-border-color);
+    border-left: solid 4px var(--nav-border-color);
     text-align: right;
+}
+
+a:nth-child(3):hover,
+a:nth-child(3).active {
+    border-right: solid 4px var(--nav-hover-border-color);
+    border-top: solid 4px var(--nav-hover-border-color);
 }
 
 a:nth-child(4) {
     border-radius: 0 0 100% 0;
+    border-bottom: solid 4px var(--nav-border-color);
+    border-right: solid 4px var(--nav-border-color);
     text-align: left;
 }
 
-/* add color to when the nav slice hovers like a pie slice lifting up */
-
-a:hover,
-a:active {
-    color: var(--nav-active-font-color);
-    background-color: var(--nav-bg-color);
-    border-right: 4px purple;
-    border-bottom: 4px purple;
+a:nth-child(4):hover,
+a:nth-child(4).active {
+    border-left: solid 4px var(--nav-hover-border-color);
+    border-top: solid 4px var(--nav-hover-border-color);
 }
 
 main {
@@ -125,9 +149,14 @@ main div {
     margin: auto;
     padding: 2rem;
     /*box-shadow: 0 0 0.5rem white;*/
-    border-left: 8px solid var(--header-font-color);
+    border-left: 8px solid var(--card-border-color);
+    /*
+    border-top: 8px solid var(--card-border-color);
+    border-right: 8px solid var(--nav-hover-border-color);
+    border-bottom: 8px solid var(--nav-hover-border-color);
+    */
     background-color: var(--card-bg-color);
-    color: var(--nav-active-font-color);
+    color: var(--nav-font-color);
 }
 
 main.home div {
