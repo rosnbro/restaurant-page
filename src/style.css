@@ -45,7 +45,6 @@ h1 {
     margin: auto 0;
     padding: 0.5rem 0;
     width: 50%;
-    /*font-size: 3rem;*/
     text-align: center;
     color: var(--header-font-color);
 }
@@ -131,9 +130,10 @@ nav {
 }
 
 main {
-    min-height: calc(100vh - 400px);
+    min-height: calc(100vh - 425px);
     width: 100%;
     padding-top: 150px;
+    padding-bottom: 25px;
     background-image: url(./pie-bg.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -142,7 +142,6 @@ main {
 }
 
 main .card {
-    min-height: 300px;
     width: 80%;
     max-width: 800px;
     margin: auto;
@@ -150,6 +149,7 @@ main .card {
     border-left: 8px solid var(--card-border-color);
     background-color: var(--card-bg-color);
     color: var(--nav-font-color);
+    box-shadow: 0 0 3px black;
 }
 
 main.home div {
@@ -157,6 +157,7 @@ main.home div {
     border: none;
     text-align: center;
     text-shadow: 3px 3px 3px black;
+    box-shadow: none;
     font-size: 3rem;
     font-family: cursive;
 }
@@ -166,17 +167,18 @@ main.home div {
     text-align: center;
     font-family: cursive;
     font-size: 2rem;
+    background-color: var(--nav-border-color);
 }
 
-.card p {
+.aboutText {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
     font-size: 1.25rem;
     text-align: center;
     line-height: 1.4;
 }
 
-.card .menuContent {
+.menuContent {
     display: flex;
     justify-content: space-around;
 }
@@ -204,6 +206,26 @@ ul {
 
 li {
     padding-bottom: 4px;
+}
+
+.contactContent {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactContent div:nth-child(1) {
+    width: 50%;
+    text-align: center;
+}
+
+.contactContent div:nth-child(2) {
+    width: 50%;
+    border-left: solid 4px var(--card-border-color);
+    text-align: center;
+}
+
+.contactContent address {
+    margin-top: 1em;
 }
 
 footer {
