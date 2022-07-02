@@ -2,7 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    --header-bg-color: #958F81;
+    --header-bg-color: #62A581;
     --header-font-color: white;
 
     --nav-bg-color: #A58162;
@@ -10,9 +10,9 @@
     --nav-hover-border-color: purple;
     --nav-font-color: white;
 
-    --card-bg-color: rgba(166, 130, 100, 0.9);
+    --card-bg-color: rgba(166, 130, 100, 1);
     --card-home-bg-color: rgba(152, 133, 103, 0);
-    --card-border-color: #9A6844;
+    --card-border-color: white;
     --card-font-color: white;
     --body-bg-color: black;
 }
@@ -65,7 +65,7 @@ nav {
     background-color: var(--header-bg-color);
 }
 
-a {
+.navItem {
     margin: 0;
     padding: 10px;
     text-align: center;
@@ -76,7 +76,7 @@ a {
     background-color: var(--nav-bg-color);
 }
 
-a:nth-child(1) {
+.navItem:nth-child(1) {
     border-radius: 100% 0 0 0;
     border-top: solid 4px var(--nav-border-color);
     border-left: solid 4px var(--nav-border-color);
@@ -84,13 +84,13 @@ a:nth-child(1) {
     line-height: 110px;
 }
 
-a:nth-child(1):hover,
-a:nth-child(1).active {
+.navItem:nth-child(1):hover,
+.navItem:nth-child(1).active {
     border-right: solid 4px var(--nav-hover-border-color);
     border-bottom: solid 4px var(--nav-hover-border-color);
 }
 
-a:nth-child(2) {
+.navItem:nth-child(2) {
     border-radius: 0 100% 0 0;
     border-top: solid 4px var(--nav-border-color);
     border-right: solid 4px var(--nav-border-color);
@@ -98,34 +98,34 @@ a:nth-child(2) {
     line-height: 110px;
 }
 
-a:nth-child(2):hover,
-a:nth-child(2).active {
+.navItem:nth-child(2):hover,
+.navItem:nth-child(2).active {
     border-left: solid 4px var(--nav-hover-border-color);
     border-bottom: solid 4px var(--nav-hover-border-color);
 }
 
-a:nth-child(3) {
+.navItem:nth-child(3) {
     border-radius: 0 0 0 100%;
     border-bottom: solid 4px var(--nav-border-color);
     border-left: solid 4px var(--nav-border-color);
     text-align: right;
 }
 
-a:nth-child(3):hover,
-a:nth-child(3).active {
+.navItem:nth-child(3):hover,
+.navItem:nth-child(3).active {
     border-right: solid 4px var(--nav-hover-border-color);
     border-top: solid 4px var(--nav-hover-border-color);
 }
 
-a:nth-child(4) {
+.navItem:nth-child(4) {
     border-radius: 0 0 100% 0;
     border-bottom: solid 4px var(--nav-border-color);
     border-right: solid 4px var(--nav-border-color);
     text-align: left;
 }
 
-a:nth-child(4):hover,
-a:nth-child(4).active {
+.navItem:nth-child(4):hover,
+.navItem:nth-child(4).active {
     border-left: solid 4px var(--nav-hover-border-color);
     border-top: solid 4px var(--nav-hover-border-color);
 }
@@ -139,22 +139,15 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    overflow: scroll;
 }
 
-main div {
+main .card {
     min-height: 300px;
-    width: 75%;
+    width: 80%;
     max-width: 800px;
     margin: auto;
     padding: 2rem;
-    /*box-shadow: 0 0 0.5rem white;*/
     border-left: 8px solid var(--card-border-color);
-    /*
-    border-top: 8px solid var(--card-border-color);
-    border-right: 8px solid var(--nav-hover-border-color);
-    border-bottom: 8px solid var(--nav-hover-border-color);
-    */
     background-color: var(--card-bg-color);
     color: var(--nav-font-color);
 }
@@ -163,6 +156,54 @@ main.home div {
     background-color: var(--card-home-bg-color);
     border: none;
     text-align: center;
+    text-shadow: 3px 3px 3px black;
+    font-size: 3rem;
+    font-family: cursive;
+}
+
+.card h2 {
+    margin: 0 0 1rem;
+    text-align: center;
+    font-family: cursive;
+    font-size: 2rem;
+}
+
+.card p {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.card .menuContent {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menuContent div:nth-child(1) {
+    width: 50%;
+    text-align: center;
+}
+
+h4 {
+    padding: 0 ;
+    text-align: center;
+}
+
+.menuContent div:nth-child(2) {
+    width: 50%;
+    border-left: solid 4px var(--card-border-color);
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+li {
+    padding-bottom: 4px;
 }
 
 footer {
@@ -181,4 +222,11 @@ footer {
 address,
 footer div {
     text-align: center;
+}
+
+img {
+    width: 32px;
+    margin: 0 8px;
+    align-self: center;
+    justify-self: center;
 }

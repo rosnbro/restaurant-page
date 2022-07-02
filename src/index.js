@@ -2,6 +2,8 @@ import renderHome from './home';
 import renderMenu from './menu';
 import renderAbout from './about';
 import renderContact from './contact';
+import instaIcon from './Instagram_simple_icon.svg';
+import githubIcon from './GitHub-Icon.png';
 import './style.css';
 
 
@@ -64,12 +66,12 @@ function renderNav(page) {
     menuButton.textContent = 'Menu';
     aboutButton.innerHTML = 'About<br>Us';
     contactButton.textContent = 'Contact';
-    /*
+    
     homeButton.classList.add('navItem');
     menuButton.classList.add('navItem');
     aboutButton.classList.add('navItem');
     contactButton.classList.add('navItem');
-    */
+    
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
     nav.appendChild(aboutButton);
@@ -93,15 +95,26 @@ function renderMain(page) {
 
 function renderFooter() {
     const footer = document.createElement('footer');
-    const social = document.createElement('div');
+    const socials = document.createElement('div');
+    const instagram = document.createElement('a');
+    const instaLogo = document.createElement('img');
+    const github = document.createElement('a');
+    const githubLogo = document.createElement('img');
     const address = document.createElement('address');
     const hours = document.createElement('div');
     
-    // ADD SOCIAL LINKS
+    instaLogo.src = instaIcon;
+    githubLogo.src = githubIcon;
+    instagram.href = 'https://www.instagram.com/benrojammin/';
+    github.href = 'https://github.com/rosnbro';
     hours.innerHTML = '<b>Hours</b><br>Wed: 2PM - 6PM<br>Sat: 8AM - 2PM';
     address.innerHTML = 'Blacksburg Farmers Market<br>108 W Roanoke St.<br>Blacksburg, VA 24060';
 
-    footer.appendChild(social);
+    instagram.appendChild(instaLogo);
+    github.appendChild(githubLogo);
+    socials.appendChild(instagram);
+    socials.appendChild(github);
+    footer.appendChild(socials);
     footer.appendChild(address);
     footer.appendChild(hours);
 
